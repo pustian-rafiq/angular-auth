@@ -10,12 +10,21 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  isLoggedIn = false;
+  authBtn: any = 'Login';
   constructor(
     private builder: FormBuilder,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
   ) {}
+
+  ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.authBtn = 'Logout';
+      this.isLoggedIn = true;
+    }
+  }
 
   registerForm = this.builder.group({
     id: this.builder.control(

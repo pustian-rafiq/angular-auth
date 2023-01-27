@@ -10,16 +10,24 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  isLoggedIn = false;
+  authBtn: any = 'Login';
   constructor(
     private builder: FormBuilder,
     private toastr: ToastrService,
-    private service: AuthService,
+    private authService: AuthService,
     private router: Router
   ) {
     sessionStorage.clear();
   }
   result: any;
 
+  ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.authBtn = 'Logout';
+      this.isLoggedIn = true;
+    }
+  }
   loginForm = this.builder.group({
     id: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.required),
@@ -27,7 +35,7 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.valid) {
-      this.service.getUser(this.loginForm.value.id).subscribe((user) => {
+      this.authService.getUser(this.loginForm.value.id).subscribe((user) => {
         console.log(user);
         this.result = user;
         if (this.result.password === this.loginForm.value.password) {

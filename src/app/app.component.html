@@ -10,11 +10,17 @@
     <span>Angular Auth</span>
     <span class="example-spacer"></span>
     <div class="example-button-row">
-      <button mat-fab extended color="warn" routerLink="/auth/register">
+      <button
+        *ngIf="!isLoggedIn"
+        mat-fab
+        extended
+        color="warn"
+        routerLink="/auth/register"
+      >
         Register
       </button>
       <button mat-fab extended color="accent" routerLink="/auth/login">
-        Login
+        {{ authBtn }}
       </button>
     </div>
   </mat-toolbar>
