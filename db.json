@@ -1,3 +1,13 @@
 {
-  "posts": []
+  "users": [
+    {
+      "id": "Admin",
+      "name": "Admin Rafiqul",
+      "email": "admin@gmail.com",
+      "password": "Admin@2023",
+      "gender": "male",
+      "role": "Admin",
+      "isActive": true
+    }
+  ]
 }
