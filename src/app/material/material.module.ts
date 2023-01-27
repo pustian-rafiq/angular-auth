@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -13,7 +14,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
 const MaterialComponentModule = [
   MatButtonModule,
   MatDialogModule,
@@ -30,6 +30,7 @@ const MaterialComponentModule = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
+  MatCardModule,
 ];
 @NgModule({
   imports: [MaterialComponentModule],
