@@ -35,6 +35,25 @@ export const routes: Routes = [
   },
 ];
 
+// This code workd for roles base guard
+
+// export const ROUTES: Routes = [
+//   { path: '', component: HomeComponent },
+//   {
+//     path: 'profile',
+//     component: ProfileComponent,
+//     canActivate: [AuthGuard]
+//   },
+//   {
+//     path: 'admin',
+//     component: AdminComponent,
+//     canActivate: [RoleGuard],
+//     data: {
+//       expectedRole: 'admin'
+//     }
+//   },
+//   { path: '**', redirectTo: '' }
+// ];
 @NgModule({
   declarations: [],
   imports: [CommonModule, RouterModule.forRoot(routes)],
